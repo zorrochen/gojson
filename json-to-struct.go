@@ -200,7 +200,7 @@ func readFile(input io.Reader) ([]byte, error) {
 // Generate a struct definition given a JSON string representation of an object and a name structName.
 func Generate(input io.Reader, parser Parser, structName, pkgName string, tags []string, subStruct bool, convertFloats bool) ([]byte, error) {
 	preSuffixPackage := ""
-	if pkgName == "" {
+	if pkgName != "" {
 		preSuffixPackage = fmt.Sprintf("package %s\n", pkgName)
 	}
 
